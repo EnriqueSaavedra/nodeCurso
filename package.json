@@ -1,0 +1,29 @@
+{
+  "name": "platziverse-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup":"SET DEBUG=platziverse:* && node setup.js",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnriqueSaavedra/nodeCurso.git"
+  },
+  "author": "Enrique Saavedra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EnriqueSaavedra/nodeCurso/issues"
+  },
+  "homepage": "https://github.com/EnriqueSaavedra/nodeCurso#readme",
+  "devDependencies": {
+    "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "debug": "^4.0.1",
+    "pg": "^7.5.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.39.0"
+  }
+}
