@@ -4,6 +4,7 @@ const setupDataBase = require('./lib/db')
 const setupAgentModel = require('./models/agent')
 const setupMetricModel = require('./models/metric')
 const defaults = require('defaults')
+const setupAgent = require('./lib/agent')
 
 module.exports = async function (config) {
   config = defaults(config, {
@@ -21,7 +22,7 @@ module.exports = async function (config) {
   const sequelize = setupDataBase(config)
   const AgentModel = setupAgentModel(config)
   const MetricModel = setupMetricModel(config)
-
+  
   // establece relacion entre tablas
   // automaticamente crea las llaves foraneas
   AgentModel.hasMany(MetricModel)
@@ -40,11 +41,11 @@ module.exports = async function (config) {
   // va a crear todos los modelos si no existen
   // sequelize.sync()
 
-  const Agente = {}
-  const Metrica = {}
+  const Agent = setupAgent(AgentModel)
+  const Metric = {}
 
   return {
-    Agente,
-    Metrica
+    Agent,
+    Metric
   }
 }

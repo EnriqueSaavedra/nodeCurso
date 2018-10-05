@@ -6,7 +6,7 @@
   "scripts": {
     "setup": "SET DEBUG=platziverse:* && node setup.js",
     "lint": "standard",
-    "test": "SET DEBUG=platziverse:* && ava tests/ --verbose"
+    "test": "SET DEBUG=platziverse:* && nyc --reporter=lcov ava tests/ --verbose"  
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   "homepage": "https://github.com/EnriqueSaavedra/nodeCurso#readme",
   "devDependencies": {
     "ava": "^0.25.0",
+    "nyc": "^13.0.1",
+    "proxyquire": "^2.1.0",
+    "sinon": "^6.3.5",
     "sqlite3": "^4.0.2",
     "standard": "^12.0.1"
   },
