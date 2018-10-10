@@ -22,7 +22,7 @@ module.exports = async function (config) {
   const sequelize = setupDataBase(config)
   const AgentModel = setupAgentModel(config)
   const MetricModel = setupMetricModel(config)
-  
+
   // establece relacion entre tablas
   // automaticamente crea las llaves foraneas
   AgentModel.hasMany(MetricModel)
